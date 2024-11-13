@@ -17,34 +17,38 @@ This repository contains a fully automated pipeline for variant analysis, design
 
 The Variant Analysis Pipeline is designed to perform:
 
-	*Quality control on raw sequencing data
-	*Mapping and alignment to reference genomes
-	*Variant calling for single-nucleotide variants (SNVs), copy number variants (CNVs), 		and structural variants (SVs)
-	*Variant annotation using popular databases for functional insights
+Quality control on raw sequencing data
+
+Mapping and alignment to reference genomes
+
+Variant calling for single-nucleotide variants (SNVs), copy number variants (CNVs),
+and structural variants (SVs)
+
+Variant annotation using popular databases for functional insights
 
 This pipeline is built with reproducibility in mind, supporting containerized execution through Docker and Conda environments.
 
 ### Pipeline Workflow
 
-	**Preprocessing**
+**Preprocessing**
 
-		**Quality Control:** Uses FastQC to assess read quality and Trimmomatic for adapter trimming.
+**Quality Control:** Uses FastQC to assess read quality and Trimmomatic for adapter trimming.
 		
-	**Alignment**
+**Alignment**
 
-		**Mapping:** Align reads to a reference genome with BWA or Bowtie2.
-		**Post-alignment processing:** Sort and index BAM files, and mark duplicates with samtools or Picard.
+**Mapping:** Align reads to a reference genome with BWA or Bowtie2.
+**Post-alignment processing:** Sort and index BAM files, and mark duplicates with samtools or Picard.
 		
-	**Variant Calling**
+**Variant Calling**
 
-		**SNVs:** Called using GATK HaplotypeCaller.
-		**CNVs:** Detected using cnvkit or Control-FREEC.
-		**Structural Variants:** Identified using Lumpy, Manta, or DELLY.
+**SNVs:** Called using GATK HaplotypeCaller.
+**CNVs:** Detected using cnvkit or Control-FREEC.
+**Structural Variants:** Identified using Lumpy, Manta, or DELLY.
 
-	**Annotation**
+**Annotation**
 
-		**Variant Annotation:** Annotates variants with ANNOVAR or VEP to identify functional effects and disease relevance.
+**Variant Annotation:** Annotates variants with ANNOVAR or VEP to identify functional effects and disease relevance.
 		
-	**Quality Control and Reporting**
+**Quality Control and Reporting**
 
-		Generates reports on variant quality and summarizes findings.
+Generates reports on variant quality and summarizes findings.
